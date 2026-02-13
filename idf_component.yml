@@ -1,0 +1,17 @@
+dependencies:
+  idf: '>=5.0'
+  hamas888/chronolog: ^1.1.5
+  espressif/esp32-camera: "^2.1.4"
+description: 'Cross-platform MCP CAN library for embedded systems.'
+issues: https://github.com/Hamas888/HMS_MCP_CAN/issues
+license: MIT
+maintainers:
+- Hamas Saeed <hamasaeed888@gmail.com>
+repository: https://github.com/Hamas888/HMS_MCP_CAN.git
+tags:
+- embedded
+- can
+- esp32
+- mcp2515
+url: https://github.com/Hamas888/HMS_MCP_CAN
+version: 1.0.0

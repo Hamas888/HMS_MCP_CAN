@@ -1,0 +1,42 @@
+menu "HMS MCP CAN Configuration"
+
+    config HMS_MCP_CAN_ENABLED
+        bool "Enable HMS MCP CAN Component"
+        default y
+        help
+          Enable support for the HMS MCP CAN module.
+
+if HMS_MCP_CAN_ENABLED
+    config HMS_MCP_CAN_CS_GPIO
+        int "CS GPIO"
+        default 10
+
+    config HMS_MCP_CAN_SCK_GPIO
+        int "SCK GPIO"
+        default 12
+
+    config HMS_MCP_CAN_MISO_GPIO
+        int "MISO GPIO"
+        default 13
+
+    config HMS_MCP_CAN_MOSI_GPIO
+        int "MOSI GPIO"
+        default 11
+
+    config HMS_MCP_CAN_DEBUG
+        bool "Enable HMS MCP CAN Debug Logging"
+        default n
+        help
+          Enable detailed debug messages for the MCP CAN component.
+          Requires ChronoLog to be present.
+
+    config HMS_MCP_CAN_LOG_LEVEL
+        int "HMS MCP CAN Log Level"
+        range 0 4
+        default 3
+        depends on HMS_MCP_CAN_DEBUG
+        help
+          0: Error, 1: Warn, 2: Info, 3: Debug, 4: Verbose
+endif # HMS_MCP_CAN_ENABLED
+
+endmenu # HMS MCP CAN Configuration
