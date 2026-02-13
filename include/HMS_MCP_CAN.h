@@ -39,15 +39,16 @@ public:
     
     HMS_MCP_CAN_StatusTypeDef begin();
     HMS_MCP_CAN_StatusTypeDef readCANMessage(HMS_MCP_CAN_MessageTypeDef &message);
-
-    #ifdef HMS_MCP_CAN_PLATFORM_ESP_ARDUINO 
+    
+    // Platform-specific member declarations
+    #if defined(HMS_MCP_CAN_PLATFORM_ESP32_ARDUINO) || defined(HMS_MCP_CAN_PLATFORM_ARDUINO)
 
     #elif defined(HMS_MCP_CAN_PLATFORM_ESP_IDF)
 
     #endif
 
 private:
-    #ifdef HMS_MCP_CAN_PLATFORM_ESP_ARDUINO
+    #if defined(HMS_MCP_CAN_PLATFORM_ESP32_ARDUINO) || defined(HMS_MCP_CAN_PLATFORM_ARDUINO)
         SPIClass    *spi            = nullptr;
         MCP_CAN     *mcpCan         = nullptr; 
 

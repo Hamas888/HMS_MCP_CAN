@@ -1,8 +1,10 @@
-#include "HMS_MCP_CAN_.h"
+#include "HMS_MCP_CAN.h"
 
-#ifdef HMS_MCP_CAN_PLATFORM_ESP32_ARDUINO
+// For generic Arduino platform or ESP32-Arduino
+#if defined(HMS_MCP_CAN_PLATFORM_ARDUINO) || defined(HMS_MCP_CAN_PLATFORM_ESP32_ARDUINO)
 
 HMS_MCP_CAN_StatusTypeDef HMS_MCP_CAN::readCANMessage(HMS_MCP_CAN_MessageTypeDef &message) {
+// ... existing code ...
     if (mcpCan->checkReceive() == CAN_MSGAVAIL) {
         long unsigned int canId;
         byte len;

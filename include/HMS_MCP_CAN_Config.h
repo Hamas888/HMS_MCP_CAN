@@ -39,7 +39,7 @@
 #if defined(ARDUINO)
   #include <SPI.h>
   #include <Arduino.h>
-  #include <mcp_can.h>
+  #include "../MCP_CAN_lib/mcp_can.h"
   #if defined(ESP32)
     #define HMS_MCP_CAN_PLATFORM_ESP32_ARDUINO
   #elif defined(ESP8266)
@@ -115,10 +115,7 @@
   │ Note: HMS MCP CAN Custom Types & Definitions                        │
   └─────────────────────────────────────────────────────────────────────┘
 */
-#define HMS_MCP_CAN_CS_PIN                              CONFIG_HMS_MCP_CAN_CS_GPIO
-#define HMS_MCP_CAN_SCK_PIN                             CONFIG_HMS_MCP_CAN_SCK_GPIO
-#define HMS_MCP_CAN_MOSI_PIN                            CONFIG_HMS_MCP_CAN_MOSI_GPIO
-#define HMS_MCP_CAN_MISO_PIN                            CONFIG_HMS_MCP_CAN_MISO_GPIO
+// Default pins are defined in platform blocks below
 
 #define HMS_MCP_CAN_ERROR_CHECK(expr)                   \
   do {                                                  \
