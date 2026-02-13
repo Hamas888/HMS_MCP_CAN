@@ -24,8 +24,14 @@
   "frameworks": ["arduino", "espidf"],
   "platforms": ["espressif32"],
   "build": {
+    "srcDir": ".",
+    "srcFilter": [
+        "+<src/*.cpp>",
+        "+<MCP_CAN_lib/mcp_can.cpp>"
+    ],
     "flags": [
-      "-std=gnu++17"
+      "-std=gnu++17",
+      "-I MCP_CAN_lib"
     ],
     "unflags": [
       "-std=gnu++11"
@@ -40,6 +46,7 @@
     "include": [
       "src",
       "include",
+      "MCP_CAN_lib",
       "examples",
       "CMakeLists.txt",
       "library.json",
